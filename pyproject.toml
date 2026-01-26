@@ -28,7 +28,7 @@ Issues = "https://github.com/srcres258/jyyslide-util/issues"
 Source = "https://github.com/srcres258/jyyslide-util"
 
 [project.scripts]
-jyyslide = "main:main"
+jyyslide = "jyyslide_util.entry:run"
 
 [tool.hatch.version]
 source = "vcs"

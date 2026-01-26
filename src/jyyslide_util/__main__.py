@@ -1,7 +1,5 @@
-import sys
-
-from .entry import main
+from .entry import run
 
 
 if __name__ == "__main__":
-  sys.exit(main())
+  run()
