@@ -48,7 +48,7 @@ class BoxBlockProcessor(BlockProcessor):
 
   def run(
     self,
-    parent: etree.Element,
+    parent: ET.Element,
     blocks: list[str]
   ) -> bool | None:
     if self.first:
@@ -62,7 +62,7 @@ class BoxBlockProcessor(BlockProcessor):
 
 
 class BoxExtension(Extension):
-  def extendMarkdown(self, md: Markdown) -> None:
+  def extendMarkdown(self, md: markdown) -> None:
     md.parser.blockprocessors.register(
       BoxBlockProcessor(md.parser),
       'box_block',

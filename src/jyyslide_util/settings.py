@@ -1,8 +1,7 @@
 import os
-from argparse import ArgumentParser
 
+from argparse import ArgumentParser
 from jinja2 import Template
-from simple_toml_configurator import Configurator
 
 
 settings_abspath = os.path.split(os.path.realpath(__file__))[0]

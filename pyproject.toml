@@ -25,7 +25,8 @@ dependencies = [
   "jinja2",
   "pyquery",
   "pyyaml",
-  "markdown"
+  "markdown",
+  "requests"
 ]
 
 [project.urls]

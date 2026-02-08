@@ -51,6 +51,7 @@
         pyquery
         pyyaml
         markdown
+        requests
       ];
       nativeBuildInputs = with pkgs.python3Packages; [
         hatchling
