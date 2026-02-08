@@ -1,14 +1,13 @@
 import os
+from importlib.resources import files, as_file
+from pathlib import Path
 
 from argparse import ArgumentParser
 from jinja2 import Template
 
 
-settings_abspath = os.path.split(os.path.realpath(__file__))[0]
-projects_abspath = os.path.abspath(os.path.join(settings_abspath, ".."))
-
-static_path = os.path.join(projects_abspath, "src", "static")
-backup_path = os.path.join(projects_abspath, "src", "backup")
+static_path = str(Path(files('jyyslide_util.static')).resolve())
+backup_path = str(Path(files('jyyslide_util.backup')).resolve())
 template_from = os.path.join(backup_path, "template", "basetemp.html")
 authortemp_from = os.path.join(backup_path, "template", "authortemp.html")
 
