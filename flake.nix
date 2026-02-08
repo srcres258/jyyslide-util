@@ -31,7 +31,7 @@
 
       version = let
         rev = self.shortRev or self.dirtyRev or "dirty";
-      in "0.0.0+${rev}";
+      in "0.1.0+${rev}";
 
       format = "pyproject";
 
