@@ -1,5 +1,6 @@
 import json
 import os
+from importlib.resources import as_file
 
 import shutil
 import yaml
@@ -112,7 +113,7 @@ def horizontal_to_vertical(horizontal: str) -> str:
   template = "<section>{}</section>"
 
   cont_cond = lambda v: len(v) == 0 or v == '' or v.isspace()
-  for vert_div_by_sec in vert_div_by_sec:
+  for vert_div_by_sec in verts_div_by_sec:
     if cont_cond(vert_div_by_sec):
       continue
     if st.op_animate_section in vert_div_by_sec:
@@ -136,12 +137,12 @@ def horizontal_to_vertical(horizontal: str) -> str:
   return ''.join(sections)
 
 
-def md_devide_to_horizontal(md_content: str) -> str:
+def md_devide_to_horizontal(content: str) -> str:
   """
   Divide the given Markdown content into horizontal sections.
 
   Args:
-      md_content (str): The Markdown content to be divided.
+      content (str): The Markdown content to be divided.
   Returns:
       str: The HTML content with horizontal sections.
   """
@@ -240,7 +241,8 @@ def process_static() -> None:
   if os.path.exists(st.output_foldpath):
     shutil.rmtree(st.output_foldpath)
   os.mkdir(st.output_foldpath)
-  shutil.copytree(st.static_path, st.static_foldpath)
+  with as_file(st.static_path) as st_p:
+    shutil.copytree(str(st_p), st.static_foldpath)
 
 
 def converter(md_filepath: str) -> None:
@@ -261,7 +263,7 @@ def converter(md_filepath: str) -> None:
   st.title = ''.join(st.filename.split('.')[:-1])
   st.body = get_body(st.content)
 
-  st.template(st.template.render(title=st.title, body=st.body))
+  st.template = st.template.render(title=st.title, body=st.body)
 
   file_util.write(st.output_filepath, st.template)
 

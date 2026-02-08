@@ -1,15 +1,14 @@
 import os
 from importlib.resources import files, as_file
-from pathlib import Path
 
 from argparse import ArgumentParser
 from jinja2 import Template
 
 
-static_path = str(Path(files('jyyslide_util.static')).resolve())
-backup_path = str(Path(files('jyyslide_util.backup')).resolve())
-template_from = os.path.join(backup_path, "template", "basetemp.html")
-authortemp_from = os.path.join(backup_path, "template", "authortemp.html")
+static_path = files('jyyslide_util.static')
+backup_path = files('jyyslide_util.backup')
+template_from = backup_path / "template" / "basetemp.html"
+authortemp_from = backup_path / "template" / "authortemp.html"
 
 op_first_section = "\n---\n"
 op_second_section = "\n----\n"

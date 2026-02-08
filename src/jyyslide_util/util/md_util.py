@@ -5,7 +5,7 @@ from markdown.blockprocessors import BlockProcessor
 import xml.etree.ElementTree as ET
 
 
-def process_image(
+def process_images(
   content: str,
   func: Callable[[str], Tuple[str, bool]]
 ) -> str:
