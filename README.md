@@ -1,7 +1,8 @@
 # jyyslide-util
 
-[![PyPI - Version](https://img.shields.io/pypi/v/jyyslide-util.svg)](https://pypi.org/project/jyyslide-util)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/jyyslide-util.svg)](https://pypi.org/project/jyyslide-util)
+使用Markdown制作和蒋炎岩老师幻灯片同一主题的Web幻灯片的简易Python工具.
+
+[![CI](https://github.com/srcres258/jyyslide-util/actions/workflows/ci.yml/badge.svg)](https://github.com/srcres258/jyyslide-util/actions/workflows/ci.yml)
 
 -----
 
@@ -12,10 +13,14 @@
 
 ## Installation
 
+请确保您的电脑上已经安装有 nix 包管理器. 然后执行:
+
 ```console
-pip install jyyslide-util
+nix build .
 ```
+
+随后即可在 `result` 目录下看到构建结果. 执行 `result/bin/jyyslide` 以运行程序.
 
 ## License
 
-`jyyslide-util` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+`jyyslide-util` is distributed under the terms of the [BSD-3-Clause](https://spdx.org/licenses/BSD-3-Clause.html) license.
