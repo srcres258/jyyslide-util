@@ -21,7 +21,12 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = []
+dependencies = [
+  "jinja2",
+  "pyquery",
+  "pyyaml",
+  "markdown"
+]
 
 [project.urls]
 Issues = "https://github.com/srcres258/jyyslide-util/issues"

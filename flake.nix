@@ -46,6 +46,12 @@
         );
       };
 
+      propagatedBuildInputs = with pkgs.python3Packages; [
+        jinja2
+        pyquery
+        pyyaml
+        markdown
+      ];
       nativeBuildInputs = with pkgs.python3Packages; [
         hatchling
         hatch-vcs
