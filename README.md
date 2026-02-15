@@ -2,6 +2,8 @@
 
 使用Markdown制作和蒋炎岩老师幻灯片同一主题的Web幻灯片的简易Python工具.
 
+本项目移植自 [jyyslide-md](https://github.com/zweix123/jyyslide-md), 在此表示感谢. 编写 slide 所用到的 Markdown 文件的具体语法可参考该项目的 README 文件.
+
 [![CI](https://github.com/srcres258/jyyslide-util/actions/workflows/ci.yml/badge.svg)](https://github.com/srcres258/jyyslide-util/actions/workflows/ci.yml)
 
 -----
